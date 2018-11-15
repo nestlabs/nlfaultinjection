@@ -84,10 +84,10 @@ NLFAULTINJECTION_COVERAGE_INFO                             = ${NLFAULTINJECTION_
 $(NLFAULTINJECTION_COVERAGE_BUNDLE):
 	$(call create-directory)
 
-$(NLFAULTINJECTION_COVERAGE_INFO): check | $(NLFAULTINJECTION_COVERAGE_BUNDLE)
+$(NLFAULTINJECTION_COVERAGE_INFO): check-local | $(NLFAULTINJECTION_COVERAGE_BUNDLE)
 	$(call generate-coverage-report,${top_builddir})
 
-coverage: $(NLFAULTINJECTION_COVERAGE_INFO)
+coverage-local: $(NLFAULTINJECTION_COVERAGE_INFO)
 
 clean-local: clean-local-coverage
 
