@@ -21,7 +21,7 @@
 #      framework.
 #
 
-language: generic
+language: cpp
 
 sudo: false
 compiler:
