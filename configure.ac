@@ -523,10 +523,12 @@ NL_RESTORE_WERROR
 
 if test "${nl_with_nlassert}" = "internal"; then
     AC_CONFIG_SUBDIRS([third_party/nlassert/repo])
+    AC_SUBST(NLASSERT_FOREIGN_SUBDIR_DEPENDENCY,["${ac_pwd}/third_party/nlassert/repo/include"])
 fi
 
 if test "${nl_with_nlunit_test}" = "internal"; then
     AC_CONFIG_SUBDIRS([third_party/nlunit-test/repo])
+    AC_SUBST(NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY,["${ac_pwd}/third_party/nlunit-test/repo/src"])
 fi
 
 #
@@ -554,53 +556,55 @@ AC_MSG_NOTICE([
 
   Configuration Summary
   ---------------------
-  Package                                   : ${PACKAGE_NAME}
-  Version                                   : ${PACKAGE_VERSION}
-  Interface                                 : ${LIBNLFAULTINJECTION_VERSION_INFO//:/.}
-  Build system                              : ${build}
-  Host system                               : ${host}
-  Target system                             : ${target}
-  Target architecture                       : ${target_cpu}
-  Target OS                                 : ${target_os}
-  Target style                              : ${TARGET_STYLE}
-  Cross compiling                           : ${cross_compiling}
-  Build shared libraries                    : ${enable_shared}
-  Build static libraries                    : ${enable_static}
-  Build debug libraries                     : ${nl_cv_build_debug}
-  Build optimized libraries                 : ${nl_cv_build_optimized}
-  Build coverage libraries                  : ${nl_cv_build_coverage}
-  Build coverage reports                    : ${nl_cv_build_coverage_reports}
-  Lcov                                      : ${LCOV:--}
-  Genhtml                                   : ${GENHTML:--}
-  Build tests                               : ${nl_cv_build_tests}
-  NLFAULTINJECTION tests                    : ${with_tests}
-  Prefix                                    : ${prefix}
-  Documentation support                     : ${nl_cv_build_docs}
-  Doxygen                                   : ${DOXYGEN:--}
-  GraphViz dot                              : ${DOT:--}
-  Nlassert source                           : ${nl_with_nlassert:--}
-  Nlassert compile flags                    : ${NLASSERT_CPPFLAGS:--}
-  Nlassert link flags                       : ${NLASSERT_LDFLAGS:--}
-  Nlassert link libraries                   : ${NLASSERT_LIBS:--}
-  Nlunit-test source                        : ${nl_with_nlunit_test:--}
-  Nlunit-test compile flags                 : ${NLUNIT_TEST_CPPFLAGS:--}
-  Nlunit-test link flags                    : ${NLUNIT_TEST_LDFLAGS:--}
-  Nlunit-test link libraries                : ${NLUNIT_TEST_LIBS:--}
-  C Preprocessor                            : ${CPP}
-  C Compiler                                : ${CC}
-  C++ Preprocessor                          : ${CXXCPP}
-  C++ Compiler                              : ${CXX}
-  Archiver                                  : ${AR}
-  Archive Indexer                           : ${RANLIB}
-  Symbol Stripper                           : ${STRIP}
-  Object Copier                             : ${OBJCOPY}
-  C Preprocessor flags                      : ${CPPFLAGS:--}
-  C Compile flags                           : ${CFLAGS:--}
-  C++ Compile flags                         : ${CXXFLAGS:--}
-  Link flags                                : ${LDFLAGS:--}
-  Link libraries                            : ${LIBS}
-  Pretty                                    : ${PRETTY:--}
-  Pretty args                               : ${PRETTY_ARGS:--}
-  Pretty check                              : ${PRETTY_CHECK:--}
-  Pretty check args                         : ${PRETTY_CHECK_ARGS:--}
+  Package                                     : ${PACKAGE_NAME}
+  Version                                     : ${PACKAGE_VERSION}
+  Interface                                   : ${LIBNLFAULTINJECTION_VERSION_INFO//:/.}
+  Build system                                : ${build}
+  Host system                                 : ${host}
+  Target system                               : ${target}
+  Target architecture                         : ${target_cpu}
+  Target OS                                   : ${target_os}
+  Target style                                : ${TARGET_STYLE}
+  Cross compiling                             : ${cross_compiling}
+  Build shared libraries                      : ${enable_shared}
+  Build static libraries                      : ${enable_static}
+  Build debug libraries                       : ${nl_cv_build_debug}
+  Build optimized libraries                   : ${nl_cv_build_optimized}
+  Build coverage libraries                    : ${nl_cv_build_coverage}
+  Build coverage reports                      : ${nl_cv_build_coverage_reports}
+  Lcov                                        : ${LCOV:--}
+  Genhtml                                     : ${GENHTML:--}
+  Build tests                                 : ${nl_cv_build_tests}
+  NLFAULTINJECTION tests                      : ${with_tests}
+  Prefix                                      : ${prefix}
+  Documentation support                       : ${nl_cv_build_docs}
+  Doxygen                                     : ${DOXYGEN:--}
+  GraphViz dot                                : ${DOT:--}
+  Nlassert source                             : ${nl_with_nlassert:--}
+  Nlassert compile flags                      : ${NLASSERT_CPPFLAGS:--}
+  Nlassert link flags                         : ${NLASSERT_LDFLAGS:--}
+  Nlassert link libraries                     : ${NLASSERT_LIBS:--}
+  Nlassert foreign subdirectory dependency    : ${NLASSERT_FOREIGN_SUBDIR_DEPENDENCY:--}
+  Nlunit-test source                          : ${nl_with_nlunit_test:--}
+  Nlunit-test compile flags                   : ${NLUNIT_TEST_CPPFLAGS:--}
+  Nlunit-test link flags                      : ${NLUNIT_TEST_LDFLAGS:--}
+  Nlunit-test link libraries                  : ${NLUNIT_TEST_LIBS:--}
+  Nlunit-test foreign subdirectory dependency : ${NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY:--}
+  C Preprocessor                              : ${CPP}
+  C Compiler                                  : ${CC}
+  C++ Preprocessor                            : ${CXXCPP}
+  C++ Compiler                                : ${CXX}
+  Archiver                                    : ${AR}
+  Archive Indexer                             : ${RANLIB}
+  Symbol Stripper                             : ${STRIP}
+  Object Copier                               : ${OBJCOPY}
+  C Preprocessor flags                        : ${CPPFLAGS:--}
+  C Compile flags                             : ${CFLAGS:--}
+  C++ Compile flags                           : ${CXXFLAGS:--}
+  Link flags                                  : ${LDFLAGS:--}
+  Link libraries                              : ${LIBS}
+  Pretty                                      : ${PRETTY:--}
+  Pretty args                                 : ${PRETTY_ARGS:--}
+  Pretty check                                : ${PRETTY_CHECK:--}
+  Pretty check args                           : ${PRETTY_CHECK_ARGS:--}
 ])
