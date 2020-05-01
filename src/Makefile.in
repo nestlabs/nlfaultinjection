@@ -290,10 +290,12 @@ MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 NLASSERT_CPPFLAGS = @NLASSERT_CPPFLAGS@
+NLASSERT_FOREIGN_SUBDIR_DEPENDENCY = @NLASSERT_FOREIGN_SUBDIR_DEPENDENCY@
 NLASSERT_LDFLAGS = @NLASSERT_LDFLAGS@
 NLASSERT_LIBS = @NLASSERT_LIBS@
 NLASSERT_SUBDIRS = @NLASSERT_SUBDIRS@
 NLUNIT_TEST_CPPFLAGS = @NLUNIT_TEST_CPPFLAGS@
+NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY = @NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY@
 NLUNIT_TEST_LDFLAGS = @NLUNIT_TEST_LDFLAGS@
 NLUNIT_TEST_LIBS = @NLUNIT_TEST_LIBS@
 NLUNIT_TEST_SUBDIRS = @NLUNIT_TEST_SUBDIRS@
@@ -395,16 +397,24 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPPFLAGS = \
-	-I$(top_srcdir)/include         \
-	$(NULL)
+    -I$(top_srcdir)/include                \
+    $(NULL)
 
 lib_LIBRARIES = \
-    libnlfaultinjection.a           \
+    libnlfaultinjection.a                  \
     $(NULL)
 
 libnlfaultinjection_a_SOURCES = \
-    nlfaultinjection.cpp            \
+    nlfaultinjection.cpp                   \
     $(NULL)
+
+
+#
+# Foreign make dependencies
+#
+NLFOREIGN_SUBDIR_DEPENDENCIES = \
+   $(NLASSERT_FOREIGN_SUBDIR_DEPENDENCY)   \
+   $(NULL)
 
 all: all-am
 

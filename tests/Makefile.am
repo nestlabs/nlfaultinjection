@@ -1,5 +1,5 @@
 #
-#    Copyright 2016 The nlfaultinjection Authors.
+#    Copyright 2016-2020 The nlfaultinjection Authors.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -69,6 +69,14 @@ TESTS_ENVIRONMENT                              = \
 
 fault_injection_test_LDADD                         = $(COMMON_LDADD)
 fault_injection_test_SOURCES                       = TestFaultInjection.cpp
+
+#
+# Foreign make dependencies
+#
+
+NLFOREIGN_SUBDIR_DEPENDENCIES                  = \
+   $(NLUNIT_TEST_FOREIGN_SUBDIR_DEPENDENCY)      \
+   $(NULL)
 
 if NLFAULTINJECTION_BUILD_COVERAGE
 CLEANFILES                                     = $(wildcard *.gcda *.gcno)

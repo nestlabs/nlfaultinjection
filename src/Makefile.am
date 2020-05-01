@@ -22,17 +22,25 @@
 
 include $(abs_top_nlbuild_autotools_dir)/automake/pre.am
 
-AM_CPPFLAGS                       = \
-	-I$(top_srcdir)/include         \
-	$(NULL)
-
-lib_LIBRARIES                     = \
-    libnlfaultinjection.a           \
+AM_CPPFLAGS                              = \
+    -I$(top_srcdir)/include                \
     $(NULL)
 
-libnlfaultinjection_a_SOURCES     = \
-    nlfaultinjection.cpp            \
+lib_LIBRARIES                            = \
+    libnlfaultinjection.a                  \
     $(NULL)
+
+libnlfaultinjection_a_SOURCES            = \
+    nlfaultinjection.cpp                   \
+    $(NULL)
+
+#
+# Foreign make dependencies
+#
+
+NLFOREIGN_SUBDIR_DEPENDENCIES            = \
+   $(NLASSERT_FOREIGN_SUBDIR_DEPENDENCY)   \
+   $(NULL)
 
 install-headers: install-data
 

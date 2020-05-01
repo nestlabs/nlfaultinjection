@@ -39,14 +39,8 @@ DIST_SUBDIRS                      = \
 distclean-recursive: DIST_SUBDIRS += $(NLASSERT_SUBDIRS) $(NLUNIT_TEST_SUBDIRS)
 
 # Always build (e.g. for 'make all') these subdirectories.
-#
-# The values of NLASSERT_SUBDIRS and NLUNIT_TEST_SUBDIRS will be populated by 
-# configure if --with-nlassert=internal and --with-nlunit_test=internal,
-# respectively.
 
 SUBDIRS                           = \
-    $(NLASSERT_SUBDIRS)             \
-    $(NLUNIT_TEST_SUBDIRS)          \
     $(NULL)
 
 include $(abs_top_nlbuild_autotools_dir)/automake/post.am
