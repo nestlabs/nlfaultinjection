@@ -37,8 +37,8 @@ A SW module implements a fault-injection API by doing the following:
    are counted per faultID, which allows a test harness to automatically loop over
    different valid configurations.
 
-[nlfaultinjection-travis]: https://travis-ci.org/nestlabs/nlfaultinjection
-[nlfaultinjection-travis-svg]: https://travis-ci.org/nestlabs/nlfaultinjection.svg?branch=master
+[nlfaultinjection-travis]: https://travis-ci.com/nestlabs/nlfaultinjection
+[nlfaultinjection-travis-svg]: https://travis-ci.com/nestlabs/nlfaultinjection.svg?branch=master
 [nlfaultinjection-codecov]: https://codecov.io/gh/nestlabs/nlfaultinjection
 [nlfaultinjection-codecov-svg]: https://codecov.io/gh/nestlabs/nlfaultinjection/branch/master/graph/badge.svg
 
